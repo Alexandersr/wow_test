@@ -1,0 +1,19 @@
+<div class="container-fluid">
+
+  <table class = "task_list">
+   <thead class="top_task_list">
+   <tr>
+    <th>ID</th>
+    <th>Город</th>
+    <th>Название</th>
+    <th>Выполнить до</th>
+    <th>Сумма</th>
+   </tr>
+    </thead>
+
+    <tbody class="bottom_tast_list">
+       <tr ng-repeat="task in getTasks()"><td>{{task.id}}</td><td>{{task.city}}</td><td>{{task.name}}</td><td>{{task.date}}</td><td>{{task.price}} Р</td></tr>
+  </tbody>
+  </table>
+  </div>
+ </div>

@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html ng-app="app">
+<head>
+    <title>Wowworks_test</title>
+    <link rel="stylesheet" type="text/css" href="img/css/style.css">
+    <link rel="stylesheet" type="text/css" href="img/css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+          rel="stylesheet">
+    <link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet"
+          type="text/css"/>
+</head>
+<body ng-controller="taskList">
+<div class="nav_bar">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-7">
+                <ul class="nav_bar_left">
+                    <li><a class="nav_bar_left_btn" href="#"><span class="nick">taskon</span></a></li>
+                    <li><a class="nav_bar_left_btn" href="#">Задания</a></li>
+                    <li><a class="nav_bar_left_btn" href="#">Финансы</a></li>
+                    <li><a class="nav_bar_left_btn" href="#">Компания</a></li>
+                    <li><a class="nav_bar_left_btn" href="#">Статистика</a></li>
+                </ul>
+            </div>
+            <div class="col-md-5">
+                <ul class="nav_bar_right">
+                    <li><img class="notification_logo" src="img/assets/ic-help-outline-24-px-copy-3.png"></li>
+                    <li><a class="nav_bar_right_btn_user" href="#">Никита Ласточкин<span class="user_dropdown">▼</span></a>
+                    </li>
+                    <li><img class="notification_logo" src="img/assets/ic-notifications-black-24-px@2x.png"><span
+                            class="label">.</span></li>
+                    <li>218 982,90 &#8381;</li>
+                    <li><a class="nav_bar_right_btn" href="#">Баланс</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="header">
+    <div class="container-fluid">
+        <h1 class="head">Задания</h1>
+    </div>
+</div>
+
+<div class="button_plus">
+    <i class="material-icons">add</i>
+</div>
+
+<div class="filter">
+    <div class="container-fluid">
+        <ul class="task_status">
+            <li ng-repeat="tab in tabs">
+                <a class="task_status_btn" href="#" ng-click="updateTab(tab.type)">{{tab.title}}<span class="circle">{{tab.count}}</span></a>
+            </li>
+        </ul>
+    </div>
+</div>
+
+<div class="pointer">
+    <div class="container-fluid">
+        <ul class="filter_task">
+            <li><input type="text" class="form-control" placeholder="Поиск по слову"></li>
+            <li><input id="check1" type="checkbox" name="check" value="check1">
+                <label for="check1"></label>Персональное
+            </li>
+            <li><input id="check2" type="checkbox" name="check" value="check2">
+                <label for="check2"></label>Ночное
+            </li>
+            <li><input id="check3" type="checkbox" name="check" value="check3">
+                <label for="check3"></label>Срочное
+            </li>
+            <li><a class="pointer_user" href="#">Никита Ласточкин<span class="user_dropdown">▼</span></a></li>
+        </ul>
+    </div>
+</div>
+
+
+<div class="task_list">
+    <ng-include src="'new.html'"></ng-include>
+</div>
+
+
+<script type="text/javascript" src="app/js/shared/bootstrap.min.js"></script>
+<script type="text/javascript" src="app/js/shared/angular/angular.min.js"></script>
+<script type="text/javascript" src="app/js/shared/angular-route/angular-route.min.js"></script>
+<script type="text/javascript" src="app/app.js"></script>
+<script type="text/javascript" src="app/js/controller/controller.js"></script>
+</body>
+</html>
